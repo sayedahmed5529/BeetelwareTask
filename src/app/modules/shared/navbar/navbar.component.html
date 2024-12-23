@@ -1,0 +1,21 @@
+<div class="layout-topbar">
+    <a class="layout-topbar-logo">
+        <img src="assets/system/images/logo/system_logo.svg" alt="logo">
+        <span>{{pageTitle | translate}}</span>
+    </a>
+
+    <div #topbarmenu class="layout-topbar-menu"
+        >
+        <button class="p-link layout-topbar-button" [pTooltip]="'Language'" [tooltipPosition]="'bottom'"
+            (click)="toggleLanguage()">
+            {{ _translate.currentLang === 'en' ? 'عربي' : 'English' }}
+            <span>{{_translate.currentLang | uppercase}}</span>
+        </button>
+       
+        <button class="p-link layout-topbar-button" [pTooltip]="'Logout'|translate" [tooltipPosition]="'bottom'" (click)="logout()"
+          >
+            <i class="pi pi-power-off"></i>
+            <span>{{'Logout'|translate}}</span>
+        </button>
+    </div>
+</div>

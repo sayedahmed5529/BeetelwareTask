@@ -1,0 +1,51 @@
+:dir(rtl) {
+  body {
+    font-family: 'Cairo', sans-serif !important;
+  }
+
+  .layout-menu ul a .layout-submenu-toggler {
+    margin-right: auto;
+    margin-left: unset;
+  }
+
+  .layout-menu ul a .layout-menuitem-icon {
+    margin-left: 0.75rem;
+  }
+
+  .p-button .p-button-icon-left {
+    margin-left: 0.5rem;
+  }
+  .store-metadata{
+    text-align:right;
+  }
+  
+  .p-inputswitch .p-inputswitch-slider:before {
+    right: 0.25rem;
+    left: unset;
+  }
+  .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+    transform: translateX(-1.25rem);
+  }
+  .p-dropdown-panel .p-dropdown-header .p-dropdown-filter {
+    padding-left: 1.75rem;
+    padding-right :unset;
+    margin-left: -1.75rem;
+    margin-right: unset;
+  }
+  .p-inputgroup-addon:first-child, .p-inputgroup button:first-child, .p-inputgroup input:first-child, .p-inputgroup > .p-inputwrapper:first-child > .p-component, .p-inputgroup > .p-inputwrapper:first-child > .p-component > .p-inputtext {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .p-inputgroup-addon {
+    border-right: 1px solid #d1d5db;
+  }
+
+  .p-paginator .p-dropdown .p-dropdown-label {
+    padding-right: 10px;
+  }
+  
+  :host(:dir(rtl)) .p-paginator .p-dropdown .p-dropdown-label {
+    padding-left: 0;
+    padding-right: unset;
+  }
+}

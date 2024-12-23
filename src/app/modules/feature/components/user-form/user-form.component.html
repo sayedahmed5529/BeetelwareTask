@@ -1,0 +1,36 @@
+<form [formGroup]="userForm" (ngSubmit)="save()">
+    <div class="p-fluid p-formgrid grid">
+        <div class="field col-12">
+            <label for="validationServer013">{{ 'Name' | translate }}</label>
+            <input type="text" class="form-control"
+                [ngClass]="{'is-invalid': userForm.get('name')?.touched && userForm.get('name')?.errors}" pInputText
+                id="validationServer013" placeholder="{{ 'Name' | translate }}" formControlName="name">
+            <small class="text-error" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.errors">
+                {{ 'FieldIsRequired' | translate }}
+            </small>
+        </div>
+        <div class="field col-12">
+            <label for="validationServer023">{{ 'Email' | translate }}</label>
+            <input type="email" class="form-control" id="validationServer023" placeholder="{{ 'Email' | translate }}" pInputText
+                formControlName="email">
+            <small *ngIf="userForm.get('email')?.touched && userForm.get('email')?.errors" class="text-error">
+                {{ 'EmailValidation' | translate }}
+            </small>
+        </div>
+        <div class="field col-12">
+            <label for="validationServer033">{{ 'Phone' | translate }}</label>
+            <input type="tel" class="form-control" id="validationServer033"  pInputText
+                formControlName="phone" pattern="\d{11}">
+            <small *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.errors"
+                class="text-error">
+                {{ 'PhoneValidation' | translate }}
+            </small>
+        </div>
+    </div>
+
+    <div class="flex gap-2 align-items-center justify-content-end">
+        <p-button [label]="'CANCEL'|translate" severity="danger" (onClick)="close()"   [attr.id]="'btn-cancel'" />
+        <p-button [disabled]="userForm.invalid" (onClick)="save()" severity="primary"
+            [label]="('SAVE' | translate)" [attr.id]="'btn-save'"/>
+    </div>
+</form>
